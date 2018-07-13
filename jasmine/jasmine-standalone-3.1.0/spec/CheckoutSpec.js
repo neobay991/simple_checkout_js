@@ -23,6 +23,7 @@ describe('Simple Checkout', function(){
   it('Shopper able to total for all scanned items', function(){
     checkout.scanItem("pasta");
     checkout.scanItem("bread");
-    expect(checkout.getTotal()).toEqual(3);
+    checkout.scanItem("milk");
+    expect(checkout.getTotal()).toEqual('£5.00');
   });
 });
