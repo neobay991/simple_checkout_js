@@ -20,7 +20,7 @@ describe('Simple Checkout', function(){
     expect(checkout.basket.length).toEqual(1);
   });
 
-  it('Shopper able to total for all scanned items', function(){
+  it('Shopper able to see total for all scanned items correctly formatted', function(){
     checkout.scanItem("pasta");
     checkout.scanItem("bread");
     checkout.scanItem("milk");
