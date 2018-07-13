@@ -18,5 +18,5 @@ Checkout.prototype.getTotal = function(item) {
     for (var i = this.basket.length; !!i--;){
     sum += arr[i];
     }
-  return "£"+sum +".00"
+  return "£"+sum +".00";
 };
