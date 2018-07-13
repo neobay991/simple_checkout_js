@@ -4,10 +4,26 @@ function Checkout() {
   this.basket = [];
 }
 
-Checkout.prototype.checkPrice = function(item) {
+Checkout.prototype.getPrice = function(item) {
   return this.products[item];
 };
 
 Checkout.prototype.scanItem = function(item) {
-  return this.basket.push(item);
+  this.item_price = this.products[item];
+  return this.basket.push(this.item_price);
+};
+
+// Checkout.prototype.getTotal = function() {
+//   for (var i = 0; i < this.basket.length; i++) {
+//     this.basket2 = this.basket.slice('');
+//   }
+// };
+
+
+Checkout.prototype.getTotal = function(item) {
+  var sum = 0, arr = this.basket;
+    for (var i = this.basket.length; !!i--;){
+    sum += arr[i];
+    }
+  return sum
 };

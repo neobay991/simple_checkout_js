@@ -8,7 +8,7 @@ describe('Simple Checkout', function(){
   });
 
   it('Shopper able to see price of an item', function(){
-    expect(checkout.checkPrice("pasta")).toEqual(2);
+    expect(checkout.getPrice("pasta")).toEqual(2);
   });
 
   it('Shopper able to scan items at checkout v1', function(){
@@ -18,5 +18,11 @@ describe('Simple Checkout', function(){
   it('Shopper able to scan items at checkout v2', function(){
     checkout.scanItem("pasta");
     expect(checkout.basket.length).toEqual(1);
+  });
+
+  it('Shopper able to total for all scanned items', function(){
+    checkout.scanItem("pasta");
+    checkout.scanItem("bread");
+    expect(checkout.getTotal()).toEqual(3);
   });
 });
